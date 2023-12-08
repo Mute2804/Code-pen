@@ -1,0 +1,190 @@
+HTML
+
+<form method="" src="">
+<div  class="lewy">
+  <label>imię:</label>
+  <input type="text" name="imie"><br>
+  <label>nazwisko:</label>
+  <input type="text" name="nazwisko"><br>
+  <label>adres:</label>
+  <input type="text" name="adres"><br>
+  <label>miasto:</label>
+  <input type="text" name="miasto"><br>
+  </div>
+<div  class="prawy">
+  <label>kod pocztowy:</label>
+  <input type="number" name="kod pocztowy"><br>
+  <label>pesel:</label>
+  <input type="number" name="pesel"><br>
+  <label>data urodzenia:</label>
+  <input type="text" name="data urodzenia"><br>
+  <label>płeć:</label>
+  <select name="płeć">
+      <option value="0">-wybierz płeć-</option>
+      <option value="1">mężczyzna</option>
+      <option value="2">kobieta</option>
+      <option value="3">croissant</option>
+      <option value="4">helikopter bojowy</option>
+      <option value="5">kopytko</option>
+      <option value="6">inny</option>
+      </select><br>
+  <input type="submit" class="guzik" value="wyślij zapytanie">
+</div>
+</form>
+ 
+<div id="wypluwacz">jj</div>
+
+<form  id="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  for="imie">Imie</label>
+                    <input type="text"  class="form-control" id="imie" name="imie">
+                </div>
+                <div class="form-group">
+                    <label for="nazwisko">Nazwisko</label>
+                    <input type="text" class="form-control" id="nazwisko" name="nazwisko">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Data urodzenia</label>
+                    <input type="adres" class="form-control" id="adres" name="adres">
+                </div>
+                <div class="form-group">
+                    <label for="plec">Płeć</label>
+                    <select class="form-control" id="plec" name="plec">
+                        <option value="1">Mężczyzna</option>
+                        <option value="0">Kobieta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="miasto">Miasto</label>
+                    <input type="text" class="form-control" id="miasto" name="miasto">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="kod_pocztowy">Kod pocztowy</label>
+                    <input type="number" class="form-control" id="kod_pocztowy" name="kod_pocztowy">
+                </div>
+                <div class="form-group">
+                    <label for="pesel">pesel</label>
+                    <input type="number" class="form-control" id="pesel" name="pesel">
+                </div>
+                <div class="form-group">
+                    <label for="data_urodzenia">Data urodzenia</label>
+                    <select class="form-control" id="data_urodzenia" name="data_urodzenia">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button name="bt" type="button" onclick="funkcja()" class="btn btn-primary">Wyślij</button>
+            
+                </div>
+            </div>
+            <div id="wypluwacz"><p style="color:red;">tu będzie błąd</p></div>
+        <table class="table" id="tabela">
+         <tbody>   
+         <tr>
+             <td>zmienna</td>
+             <td>wartość</td>
+             <td>opcja</td>
+         </tr> 
+         </tbody>  
+        </table>
+        </div>
+    </form>
+
+CSS
+
+body{
+  background-color: #999;
+}
+.lewy {
+  float: left;
+    background-color: #666;
+}
+.prawy {
+  float: right;
+    background-color: #555;
+}
+
+.lewy, .prawy{
+  color: #fff;
+  border: 1px solid black;
+  padding: 5px;
+  width: 48%;
+}
+.lewy input , .prawy input {
+  margin: 1%;
+  width: 96%;
+}
+.guzik {
+  background-color: green;
+  width: 100%;
+}
+.guzik , .lewy input , .prawy input , .lewy select , .prawy select {
+  padding: 5px;
+  border: 2px solid black;
+  color: #111;
+  border-radius: 5px;
+}
+.lewy input:hover , .prawy input:hover {
+  background-color: grey;
+  color: white;
+}
+.lewy input:active , .prawy input:active {
+  background-color: black;
+  color: white;
+}
+
+JS
+
+function funkcja() {
+    imie = document.getElementById("imie").value;
+    nazwisko = document.getElementById("nazwisko").value;
+    adres = document.getElementById("adres").value;
+    miasto = document.getElementById("miasto").value;
+    kod_pocztowy = document.getElementById("kod pocztowy").value;
+    pesel = document.getElementById("pesel").value;
+    data_urodzenia = document.getElementById("data urodzenia").value;
+    plec = document.getElementById("plec").value;
+
+    console.log("długość: " +  imie.length);
+    blad = "<h3>konunikat</h3>";
+    if(imie.length < 3) { blad += "błąd tu jest straszny imienia<br>";}
+    if(nazwisko.length < 3) { blad += "błąd tu jest straszny nazwisko<br>";}
+    if(adres.length < 3) { blad += "błąd tu jest straszny adresu<br>";}
+    if(miasto.lenght < 3 ){ blad += "błąd tu jest straszny miasta<br>";}
+    if(kod_pocztowy.lenght < 6 || kod_pocztowy.lenght > 6){ blad += "błąd tu jest straszny kodu pocztowego<br>";}
+    if(pesel.length < 11 || pesel.lenght > 11) {  blad += "błąd tu jest straszny peselu<br>";}
+    if(plec == 0){ blad += "wybierz płeć<br>";}
+
+    const regexImie = /^[a-zA-ZąęĆŁÓŚŻŹŃ]{3,20}$/;
+    const regexNazwisko = /^[a-zA-ZąęĆŁÓŚŻŹŃ]{3,50}$/;
+    const regexAdres = /^[0-9a-zA-ZąęĆŁÓŚŻŹŃ.,-]{1,255}$/;
+    const regexMiasto = /^[a-zA-ZąęĆŁÓŚŻŹŃ]{3,30}$/;
+    const regexKodPocztowy = /^[0-9]{2}-[0-9]{3}$/;
+    const regexPESEL = /^[0-9]{11}$/;
+    const regexDataUrodzenia = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
+    const regexPłeć = /^[M|K]{1}$/;
+
+        document.getElementById("wypluwacz").innerHTML = blad;
+    
+}
+
+f = document.getElementById("form");
+w = document.getElementById("wypluwacz");
+
+b = "<br>";
+rexN =  /^[0-9]+$/;
+rexT =  /^[a-zA-Z]+$/;
+rexD =  /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
+w.innerHTML+= b;
+
+f.imie.addEventListener("change", function (e) {  w.innerHTML+= this.name +": "+validate(this,3)+b; });
+f.nazwisko.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,3)+b; });
+f.adres.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"D")+b; });
+f.miasto.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"N")+b; });
+f.kod_pocztowy.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"N")+b; });
+f.pesel.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"N")+b; });
+f.data_urodzenia.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"N")+b; });
+f.plec.addEventListener("change", function (e) {  w.innerHTML += this.name +": "+validate(this,0,"N")+b; });
