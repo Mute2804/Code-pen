@@ -1,0 +1,60 @@
+HTML
+
+<form method="" src="">
+<div  class="lewy">
+  <label>imię:</label>
+  <input type="text" name="imie"><br>
+  <label>nazwisko:</label>
+  <input type="text" name="nazwisko"><br>
+  <label>wiek:</label>
+  <input type="number" name="wiek"><br>
+</div>
+<div  class="prawy">
+  <label>hasło:<label>
+  <input type="password" name="pass"><br>
+  <label>numer:<label>
+  <input type="number" value="liczby"><br>
+  <label>płec:<label>
+  <select name="plec">
+      <option value="0">croissant</option>
+      <option value="1">zmywarka</option>
+      </select>
+  <input type="submit" class="guzik" value="wyślij zapytanie">
+</div>
+</form>
+
+CSS
+
+.lewy {
+  float: left;
+    background-color: #666;
+}
+.prawy {
+  float: right;
+    background-color: #555;
+}
+
+.lewy, .prawy{
+  color: #fff;
+  border: 1px solid black;
+  padding: 5px;
+  width: 48%;
+}
+.lewy input , .prawy input {
+  margin: 1%;
+  width: 97%;
+}
+.guzik {
+  background-color: #fAC;
+  width: 100%;
+}
+.guzik , .lewy input , .prawy input , .lewy select , .prawy select {
+  padding: 5px;
+  border: 2px solid black;
+  color: #111;
+  border-radius: 5px;
+}
+.lewy input:hover , .prawy input:hover , .lewy input:active , .prawy input:active {
+  background-color: blue;
+  color: white;
+}
