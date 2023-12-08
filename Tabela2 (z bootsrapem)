@@ -1,0 +1,33 @@
+HTML
+
+<div class="container text-center">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      3/12
+    </div>
+    <div class="col-md-2">
+      2/12
+    </div>
+    <div class="col-md-7">
+      7/12
+    </div>
+    </div>
+  </div>
+</div>
+
+CSS
+
+.col-md-3 , .col-md-2 , .col-md-7 {
+  background-color:red;
+  border: 5px solid white;
+  height: 250px;
+}
+.container {
+  min-height:300px;
+  background-color:blue;
+}
+
+JS
+
+import bootstrap from "https://esm.sh/bootstrap";
